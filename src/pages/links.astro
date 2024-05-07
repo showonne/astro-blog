@@ -1,11 +1,84 @@
 ---
-import Layout from '../layouts/BlogPost.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const dataSource = {
+  工具: [
+    ["正则", "https://regexper.com/#"],
+    ["历史版本Chrome下载", "https://chromium.cypress.io/"],
+    [
+      "生成border-radius",
+      "https://9elements.github.io/fancy-border-radius/full-control.html",
+    ],
+    ["画图用", "https://excalidraw.com/"],
+    ["hex-rgb", "https://www.webfx.com/web-design/hex-to-rgb/"],
+    ["渐变色", "https://uigradients.com/"],
+  ],
+  电子书: [
+    ["ES6 入门教程", "https://es6.ruanyifeng.com/"],
+    [
+      "JavaScript Promise迷你书",
+      "http://liubin.org/promises-book/#introduction",
+    ],
+  ],
+  文章: [["build-your-own-react", "https://pomb.us/build-your-own-react/"]],
+};
+
+const tags = Object.keys(dataSource);
+const map = {
+  全部: [],
+};
+for (let tag of tags) {
+  const currentList = dataSource[tag];
+  map[tag] = currentList;
+  map["全部"].push(...currentList);
+}
 ---
 
-<Layout
-	title="About Me"
-	description="Lorem ipsum dolor sit amet"
-	pubDate={new Date('August 08 2021')}
-	heroImage="/blog-placeholder-about.jpg"
->
-</Layout>
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+    <section style="height: calc(100vh - 60px); overflow: auto; display: flex; justify-content: center">
+      <ul style="width: 40%;">
+        {
+					map["全部"]?.map((item, index) => (
+						<div class="link-item">
+							<a href={item[1]} target="_blank">
+								<span>{item[0]}</span>
+							</a>
+						</div>
+					))
+				}
+      </ul>
+    </section>
+  </body>
+</html>
+<style>
+	.link-item {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+  flex-flow: column;
+  align-items: flex-start;
+
+	a {
+		text-decoration: none;
+	}
+  
+  span {
+    font-size: 20px;
+    font-weight: 800;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
+  }
+}
+</style>
