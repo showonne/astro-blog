@@ -1,0 +1,11 @@
+---
+// Icon.astro
+import { ICON_MAP } from '../icon-map'; // 确保从正确的文件路径导入 ICON_MAP
+type IIconType = 'zhihu' | 'weibo' | 'github'
+
+const { type } = Astro.props; // 获取从父组件传入的type属性
+const iconData = ICON_MAP[type as IIconType] || {}; // 根据type获取对应的icon数据，如果没有匹配，则默认为空对象
+---
+
+<a target="_blank" href={iconData.link ?? ''} set:html={iconData.icon ?? ''}>
+</a>

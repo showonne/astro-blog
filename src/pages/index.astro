@@ -1,0 +1,53 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Icon from '../components/Icon.astro';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<div class="page-index">
+			<div>
+				<p class="title">Showo^^e</p>
+				<div class="icons">
+					<Icon type="github"></Icon>
+          <Icon type="weibo"></Icon>
+          <Icon type="zhihu"></Icon>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<style>
+.page-index {
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 100px;
+  font-weight: 800;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
+}
+
+@media screen and (max-width: 375px) {
+  .title {
+    font-size: 60px;
+  }
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+</style>
