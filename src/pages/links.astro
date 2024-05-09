@@ -3,7 +3,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
-const dataSource = {
+type ICategory = "工具" | "电子书" | "文章";
+
+const dataSource: Record<ICategory, string[][]> = {
   工具: [
     ["正则", "https://regexper.com/#"],
     ["历史版本Chrome下载", "https://chromium.cypress.io/"],
@@ -26,12 +28,12 @@ const dataSource = {
 };
 
 const tags = Object.keys(dataSource);
-const map = {
+const map: Record<string, string[][]> = {
   全部: [],
 };
-for (let tag of tags) {
+for (let tag of tags as Array<ICategory>) {
   const currentList = dataSource[tag];
-  map[tag] = currentList;
+  // map[tag] = currentList;
   map["全部"].push(...currentList);
 }
 ---
