@@ -265,3 +265,8 @@ pre[class*="language-"].language-css > code, pre[class*="language-"].language-sa
 		text-align: center;
 	}
 }
+
+.astro-code {
+	padding: 16px 20px;
+	font-size: 14px;
+}
