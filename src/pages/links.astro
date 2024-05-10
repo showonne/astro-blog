@@ -1,38 +1,14 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION, LINK_DATA_SOURCE, type ICategory } from "../consts";
 
-type ICategory = "工具" | "电子书" | "文章";
-
-const dataSource: Record<ICategory, string[][]> = {
-  工具: [
-    ["正则", "https://regexper.com/#"],
-    ["历史版本Chrome下载", "https://chromium.cypress.io/"],
-    [
-      "生成border-radius",
-      "https://9elements.github.io/fancy-border-radius/full-control.html",
-    ],
-    ["画图用", "https://excalidraw.com/"],
-    ["hex-rgb", "https://www.webfx.com/web-design/hex-to-rgb/"],
-    ["渐变色", "https://uigradients.com/"],
-  ],
-  电子书: [
-    ["ES6 入门教程", "https://es6.ruanyifeng.com/"],
-    [
-      "JavaScript Promise迷你书",
-      "http://liubin.org/promises-book/#introduction",
-    ],
-  ],
-  文章: [["build-your-own-react", "https://pomb.us/build-your-own-react/"]],
-};
-
-const tags = Object.keys(dataSource);
+const tags = Object.keys(LINK_DATA_SOURCE);
 const map: Record<string, string[][]> = {
   全部: [],
 };
 for (let tag of tags as Array<ICategory>) {
-  const currentList = dataSource[tag];
+  const currentList = LINK_DATA_SOURCE[tag];
   // map[tag] = currentList;
   map["全部"].push(...currentList);
 }
@@ -45,7 +21,7 @@ for (let tag of tags as Array<ICategory>) {
   </head>
   <body>
     <Header />
-    <section style="height: calc(100vh - 60px); overflow: auto; display: flex; justify-content: center">
+    <section>
       <ul style="width: 40%;">
         {
 					map["全部"]?.map((item, index) => (
@@ -61,6 +37,12 @@ for (let tag of tags as Array<ICategory>) {
   </body>
 </html>
 <style>
+  section {
+    height: calc(100vh - 60px);
+    overflow: auto;
+    display: flex;
+    justify-content: center
+  }
 	.link-item {
   text-decoration: none;
   display: flex;
@@ -73,14 +55,14 @@ for (let tag of tags as Array<ICategory>) {
 
 	a {
 		text-decoration: none;
+
+    span {
+      font-size: 20px;
+      font-weight: 800;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
+    }
 	}
-  
-  span {
-    font-size: 20px;
-    font-weight: 800;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
-  }
 }
 </style>

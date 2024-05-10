@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Header />
-    <section style="height: calc(100vh - 60px); overflow: auto; display: flex; justify-content: center">
+    <section>
       <ul style="width: 40%;">
         {
           posts.map((post) => (
@@ -38,6 +38,12 @@ const posts = (await getCollection("blog")).sort(
 </html>
 
 <style>
+section {
+  height: calc(100vh - 60px);
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
 main {
   width: 960px;
 }
