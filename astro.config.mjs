@@ -5,6 +5,11 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://example.com',
+	site: 'https://showonne.netlify.app',
 	integrations: [mdx(), sitemap()],
+	vite: {
+    optimizeDeps: {
+      exclude: ["@resvg/resvg-js"]
+    }
+  },
 });
