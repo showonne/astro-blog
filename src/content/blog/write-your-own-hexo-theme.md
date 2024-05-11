@@ -2,7 +2,6 @@
 title: "写一个自己的Hexo主题"
 pubDate: "Jul 27 2016"
 description: "Hexo主题开发指南"
-heroImage: '/blog-placeholder-3.jpg'
 ---
 
 最开始折腾Hexo的时候感觉这东西很神奇，通过他和github搭配就能生成免费的静态博客，而且还有丰富的主题可以选择，当我刚入Hexo的时候默认主题是`landscape`，后来又使用过`NexT`，是一款很漂亮的主题，但是除此之外，还有很多好看的主题，我很好奇这些主题都是怎么写出来的，于是乎就仿照`landscape`主题开始研究，写自己的主题，也就是[我自己的博客](http://www.showonne.com/)正在用的主题，项目地址在[这里](https://github.com/showonne/hexo_showonne)。

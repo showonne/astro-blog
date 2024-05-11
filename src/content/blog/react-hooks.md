@@ -2,7 +2,6 @@
 title: '关于 React Hooks'
 pubDate: 'Aug 15 2022'
 description: "React Hooks 学习笔记"
-heroImage: '/blog-placeholder-2.jpg'
 ---
 
 ## P1. 个人总结

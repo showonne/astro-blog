@@ -2,7 +2,6 @@
 title: "面试官：HTTP/2 有什么优点？别再说 Server Push 了"
 pubDate: "Aug 22 2022"
 description: "HTTP/2  Server Push 已凉"
-heroImage: '/blog-placeholder-4.jpg'
 ---
 
 2022年8月18日，Chrome 开发团队博客发布了“Removing HTTP/2 Server Push from Chrome”一文，表示 Chrome 106 和之后的版本将默认禁用 HTTP/2 Server Push 特性
