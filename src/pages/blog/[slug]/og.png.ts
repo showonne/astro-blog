@@ -24,8 +24,8 @@ export const GET: APIRoute = async ({ props }) => {
   const html = generatePostOG(post)
 
   return new ImageResponse(html, {
-    // width: 1200,
-    // height: 600
+    width: 1200,
+    height: 600
   });
 }
 
