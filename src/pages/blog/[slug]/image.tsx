@@ -24,11 +24,11 @@ function ArrowRightIcon(props: { tw: string }) {
 export function generatePostOG (post: CollectionEntry<"blog">) {
   return (
     <div tw="w-full h-full flex flex-col bg-[#283d47] text-white p-6 rounded-2xl shadow-lg mx-auto justify-end">
-      <h1 tw="text-6xl font-extrabold mb-0">{post.data.title}</h1>
-      <p tw="text-2xl mb-10">{post.data?.description}</p>
-      <div tw="flex items-center justify-between p-4 bg-[#ffc408] rounded-lg">
-        <span tw="text-lg text-black">{SITE_URL.replace('https://', '')}</span>
-        <ArrowRightIcon tw="w-6 h-6 text-gray-800" />
+      <h1 tw="text-8xl font-extrabold mb-0">{post.data.title}</h1>
+      <p tw="text-6xl mb-10">{post.data?.description}</p>
+      <div tw="flex items-center justify-between p-4 bg-[#ffc408] rounded-lg mb-[100px]">
+        <span tw="text-lg text-black text-2xl">{SITE_URL.replace('https://', '')}</span>
+        <ArrowRightIcon tw="w-8 h-8 text-gray-800" />
       </div>
     </div>
   );
