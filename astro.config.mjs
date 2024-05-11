@@ -3,9 +3,11 @@ import mdx from '@astrojs/mdx';
 
 import sitemap from '@astrojs/sitemap';
 
+import { SITE_URL } from './src/consts';
+
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://showonne.netlify.app',
+	site: SITE_URL,
 	integrations: [mdx(), sitemap()],
 	vite: {
     optimizeDeps: {

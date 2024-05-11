@@ -3,6 +3,7 @@
 
 export const SITE_TITLE = 'Showo^^e';
 export const SITE_DESCRIPTION = 'Welcome to my website!';
+export const SITE_URL = 'https://showonne.netlify.app';
 
 export type ICategory = "工具" | "电子书" | "文章";
 

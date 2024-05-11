@@ -1,5 +1,5 @@
 import type { CollectionEntry } from "astro:content";
-import { SITE_TITLE } from "../../../consts";
+import { SITE_TITLE, SITE_URL } from "../../../consts";
 
 function ArrowRightIcon(props: { tw: string }) {
   return (
@@ -23,10 +23,11 @@ function ArrowRightIcon(props: { tw: string }) {
 
 export function generatePostOG (post: CollectionEntry<"blog">) {
   return (
-    <div tw="flex flex-col bg-[#283d47] text-white p-6 rounded-2xl shadow-lg max-w-sm mx-auto">
-      <h1 tw="text-3xl font-bold mb-2">{post.data.title}</h1>
+    <div tw="w-full h-full flex flex-col bg-[#283d47] text-white p-6 rounded-2xl shadow-lg mx-auto justify-end">
+      <h1 tw="text-6xl font-extrabold mb-0">{post.data.title}</h1>
+      <p tw="text-2xl mb-10">{post.data?.description}</p>
       <div tw="flex items-center justify-between p-4 bg-[#ffc408] rounded-lg">
-        <span tw="text-lg text-black">showonne.netlify.app</span>
+        <span tw="text-lg text-black">{SITE_URL.replace('https://', '')}</span>
         <ArrowRightIcon tw="w-6 h-6 text-gray-800" />
       </div>
     </div>
