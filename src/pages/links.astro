@@ -22,7 +22,7 @@ for (let tag of tags as Array<ICategory>) {
   <body>
     <Header />
     <section>
-      <ul style="width: 40%;">
+      <ul class="list-wrapper">
         {
 					map["全部"]?.map((item, index) => (
 						<div class="link-item">
@@ -64,5 +64,13 @@ for (let tag of tags as Array<ICategory>) {
       background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
     }
 	}
+}
+.list-wrapper {
+  width: 40%;
+}
+@media (max-width: 768px) {
+  .list-wrapper {
+    width: 90%;
+  }
 }
 </style>
