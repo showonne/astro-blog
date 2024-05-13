@@ -42,11 +42,6 @@ const image = `${Astro.url}og.png`
 
 
     <style>
-      main {
-        width: calc(100% - 2em);
-        max-width: 100%;
-        margin: 0;
-      }
       :global(code) {
         background: #24292e;
         padding: 2px 4px;
@@ -56,6 +51,11 @@ const image = `${Astro.url}og.png`
       }
       :global(.astro-code+.astro-code) {
         margin-top: 20px;
+      }
+      main {
+        width: calc(100% - 2em);
+        width: 100%;
+        margin: 0;
       }
       .prose {
         width: 60%;
@@ -92,6 +92,20 @@ const image = `${Astro.url}og.png`
       }
       .last-updated-on {
         font-style: italic;
+      }
+      @media (max-width: 768px) {
+        .prose {
+          width: 100%;
+        }
+        .title {
+          font-size: 1.5rem;
+        }
+        .title h1 {
+          margin: 0 0 0.2em 0;
+        }
+        .date {
+          color: rgb(var(--gray));
+        }
       }
     </style>
   </head>
