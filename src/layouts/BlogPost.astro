@@ -93,6 +93,9 @@ const image = `${Astro.url}og.png`
       .last-updated-on {
         font-style: italic;
       }
+      .giscus {
+        margin-top: 20px;
+      }
       @media (max-width: 768px) {
         .prose {
           width: 100%;
@@ -132,8 +135,24 @@ const image = `${Astro.url}og.png`
 					<div class="article-content">
 						<slot />
 					</div>
+          <div class="giscus"></div>
         </div>
       </article>
     </main>
+    <script is:inline src="https://giscus.app/client.js"
+          data-repo="showonne/astro-blog"
+          data-repo-id="R_kgDOL4GFEA"
+          data-category="General"
+          data-category-id="DIC_kwDOL4GFEM4CfU5J"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
   </body>
 </html>
